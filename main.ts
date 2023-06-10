@@ -273,11 +273,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     raptor.vy = -100
-    controller.moveSprite(raptor, 70, 500)
+    controller.moveSprite(raptor, 100, 500)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     raptor.vy = -100
-    controller.moveSprite(raptor, 70, 500)
+    controller.moveSprite(raptor, 100, 500)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
@@ -337,7 +337,9 @@ initRaptor()
 info.setLife(1)
 info.setScore(0)
 end = 0
-game.showLongText("Press any button to jump.", DialogLayout.Top)
+game.showLongText("Press A button to jump.", DialogLayout.Top)
+game.showLongText("Press Arrow to move", DialogLayout.Top)
+game.showLongText("Good Luck!", DialogLayout.Top)
 game.onUpdate(function () {
     if (raptor.y < 94) {
         raptor.ay = 400
@@ -509,7 +511,7 @@ game.onUpdateInterval(1000, function () {
             . . . 2 2 4 4 4 4 4 4 2 2 . . . 
             . . . . . 2 2 2 2 2 2 . . . . . 
             `, ground1.vx, 70)
-        cactus.z = randint(60, 85)
+        cactus.z = randint(0, 100)
         cactus.y = 20
     }
 })
